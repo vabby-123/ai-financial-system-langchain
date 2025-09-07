@@ -9,3 +9,4 @@ langchain-google-genai
 google-generativeai
 pydantic
 langchain-community
+matplotlib
