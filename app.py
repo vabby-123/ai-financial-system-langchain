@@ -27,7 +27,7 @@ load_dotenv()
 
 # ==================== Configuration ====================
 st.set_page_config(
-    page_title="Quantum Finance AI Platform",
+    page_title="WVB Side Project- AI Platform",
     page_icon="💎",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -663,7 +663,7 @@ def main():
     # Header with gradient effect
     st.markdown("""
     <div style='text-align: center; padding: 20px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 10px; margin-bottom: 30px;'>
-        <h1 style='color: white; font-size: 3em; margin: 0;'>💎 Quantum Finance AI Platform</h1>
+        <h1 style='color: white; font-size: 3em; margin: 0;'>💎WVB Sample AI Platform</h1>
         <p style='color: #a0a0ff; font-size: 1.2em; margin-top: 10px;'>Professional Investment Intelligence Powered by AI</p>
     </div>
     """, unsafe_allow_html=True)
@@ -860,7 +860,7 @@ def main():
     # Footer
     st.markdown("""
     <div style='margin-top: 50px; padding: 20px; background: linear-gradient(90deg, #1e3c72, #2a5298); border-radius: 10px; text-align: center;'>
-        <p style='color: white; margin: 0;'>Built with ❤️ by Vaibhav | Powered by Gemini AI & Streamlit</p>
+        <p style='color: white; margin: 0;'>Built with ❤️ by Vaibhav </p>
         <p style='color: #a0a0ff; margin: 5px 0;'>Professional Multi-Agent Financial Analysis Platform</p>
     </div>
     """, unsafe_allow_html=True)
