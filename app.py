@@ -41,116 +41,315 @@ st.markdown("""
 <style>
     /* Main container styling */
     .main {
-        background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: #ffffff;
     }
     
     /* Metric cards */
     [data-testid="metric-container"] {
-        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #3a5998;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #4a4a4a;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        color: #ffffff;
+    }
+    
+    /* Metric values and labels */
+    [data-testid="metric-container"] > div {
+        color: #ffffff !important;
+    }
+    
+    [data-testid="metric-container"] [data-testid="metric-value"] {
+        color: #00e676 !important;
+        font-weight: bold;
+    }
+    
+    [data-testid="metric-container"] [data-testid="metric-label"] {
+        color: #e0e0e0 !important;
     }
     
     /* Headers */
-    h1, h2, h3 {
-        background: linear-gradient(90deg, #00d4ff, #0099ff);
+    h1, h2, h3, h4, h5, h6 {
+        color: #ffffff !important;
+        font-weight: bold;
+    }
+    
+    /* Main title with gradient effect */
+    h1 {
+        background: linear-gradient(90deg, #00e676, #00bcd4);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-weight: bold;
+        background-clip: text;
     }
     
     /* Sidebar styling */
     .css-1d391kg {
-        background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+        background: linear-gradient(180deg, #1e1e1e 0%, #2a2a2a 100%);
+        color: #ffffff;
+    }
+    
+    /* Sidebar text */
+    .css-1d391kg * {
+        color: #ffffff !important;
     }
     
     /* Buttons */
     .stButton > button {
-        background: linear-gradient(90deg, #0099ff, #00d4ff);
-        color: white;
+        background: linear-gradient(90deg, #00e676, #00bcd4);
+        color: #000000 !important;
         border: none;
-        padding: 10px 24px;
-        border-radius: 5px;
+        padding: 12px 24px;
+        border-radius: 8px;
         font-weight: bold;
+        font-size: 16px;
         transition: all 0.3s;
     }
     
     .stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 153, 255, 0.4);
+        box-shadow: 0 6px 20px rgba(0, 230, 118, 0.4);
+        background: linear-gradient(90deg, #00c765, #00a8c0);
     }
     
     /* Input fields */
     .stTextInput > div > div > input {
-        background-color: #1a1a2e;
-        border: 1px solid #3a5998;
-        border-radius: 5px;
-        color: white;
+        background-color: #2a2a2a !important;
+        border: 2px solid #4a4a4a !important;
+        border-radius: 8px;
+        color: #ffffff !important;
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .stTextInput > div > div > input:focus {
+        border-color: #00e676 !important;
+        box-shadow: 0 0 0 2px rgba(0, 230, 118, 0.2);
+    }
+    
+    /* Input labels */
+    .stTextInput > label {
+        color: #ffffff !important;
+        font-weight: 600;
     }
     
     /* Selectbox */
     .stSelectbox > div > div {
-        background-color: #1a1a2e;
-        border: 1px solid #3a5998;
+        background-color: #2a2a2a !important;
+        border: 2px solid #4a4a4a !important;
+        color: #ffffff !important;
+        border-radius: 8px;
+    }
+    
+    .stSelectbox > div > div > div {
+        color: #ffffff !important;
+    }
+    
+    /* Selectbox labels */
+    .stSelectbox > label {
+        color: #ffffff !important;
+        font-weight: 600;
     }
     
     /* Tabs */
     .stTabs [data-baseweb="tab-list"] {
-        background: linear-gradient(90deg, #1a1a2e, #16213e);
-        border-radius: 10px;
-        padding: 5px;
+        background: #2a2a2a;
+        border-radius: 12px;
+        padding: 8px;
+        border: 1px solid #4a4a4a;
     }
     
     .stTabs [data-baseweb="tab"] {
-        color: #a0a0a0;
+        color: #b0b0b0 !important;
         font-weight: 600;
+        padding: 12px 20px;
+        border-radius: 8px;
     }
     
     .stTabs [aria-selected="true"] {
-        background: linear-gradient(90deg, #0099ff, #00d4ff);
-        color: white !important;
-        border-radius: 5px;
+        background: linear-gradient(90deg, #00e676, #00bcd4) !important;
+        color: #000000 !important;
+        font-weight: bold;
     }
     
     /* Expander */
     .streamlit-expanderHeader {
-        background: linear-gradient(90deg, #1e3c72, #2a5298);
-        border-radius: 5px;
-        color: white;
+        background: #2a2a2a !important;
+        border: 1px solid #4a4a4a;
+        border-radius: 8px;
+        color: #ffffff !important;
+        padding: 12px;
+    }
+    
+    .streamlit-expanderContent {
+        background: #1e1e1e;
+        border: 1px solid #4a4a4a;
+        border-top: none;
+        border-radius: 0 0 8px 8px;
+        color: #ffffff;
     }
     
     /* Charts background */
     .js-plotly-plot {
-        background: rgba(26, 26, 46, 0.5) !important;
-        border-radius: 10px;
-        padding: 10px;
+        background: rgba(42, 42, 42, 0.8) !important;
+        border-radius: 12px;
+        padding: 15px;
+        border: 1px solid #4a4a4a;
     }
     
     /* Success/Error/Warning/Info boxes */
     .stAlert {
-        background: rgba(26, 26, 46, 0.8);
-        border: 1px solid;
-        border-radius: 5px;
+        border-radius: 8px;
+        border-width: 2px;
+        font-weight: 500;
+    }
+    
+    .stAlert[data-baseweb="notification"] {
+        color: #ffffff !important;
+    }
+    
+    /* Success alert */
+    .stSuccess {
+        background: rgba(0, 230, 118, 0.1) !important;
+        border-color: #00e676 !important;
+        color: #00e676 !important;
+    }
+    
+    /* Error alert */
+    .stError {
+        background: rgba(244, 67, 54, 0.1) !important;
+        border-color: #f44336 !important;
+        color: #f44336 !important;
+    }
+    
+    /* Warning alert */
+    .stWarning {
+        background: rgba(255, 193, 7, 0.1) !important;
+        border-color: #ffc107 !important;
+        color: #ffc107 !important;
+    }
+    
+    /* Info alert */
+    .stInfo {
+        background: rgba(0, 188, 212, 0.1) !important;
+        border-color: #00bcd4 !important;
+        color: #00bcd4 !important;
     }
     
     /* Chat messages */
     .stChatMessage {
-        background: rgba(26, 26, 46, 0.7);
-        border-radius: 10px;
-        border: 1px solid #3a5998;
+        background: #2a2a2a !important;
+        border-radius: 12px;
+        border: 1px solid #4a4a4a;
+        color: #ffffff;
+        padding: 16px;
+    }
+    
+    .stChatMessage * {
+        color: #ffffff !important;
     }
     
     /* Dataframe */
     .dataframe {
-        background: #1a1a2e !important;
-        color: white !important;
+        background: #2a2a2a !important;
+        color: #ffffff !important;
+        border: 1px solid #4a4a4a;
+        border-radius: 8px;
+    }
+    
+    .dataframe th {
+        background: #3a3a3a !important;
+        color: #ffffff !important;
+        font-weight: bold;
+    }
+    
+    .dataframe td {
+        color: #ffffff !important;
+        border-color: #4a4a4a !important;
     }
     
     /* Spinner */
     .stSpinner > div {
-        border-color: #00d4ff !important;
+        border-color: #00e676 !important;
+    }
+    
+    /* General text elements */
+    .stMarkdown, .stText {
+        color: #ffffff !important;
+    }
+    
+    /* Code blocks */
+    .stCodeBlock {
+        background: #1e1e1e !important;
+        border: 1px solid #4a4a4a;
+        border-radius: 8px;
+    }
+    
+    /* Ensure all text is readable */
+    * {
+        color: inherit;
+    }
+    
+    /* Radio buttons */
+    .stRadio > label {
+        color: #ffffff !important;
+    }
+    
+    .stRadio [role="radiogroup"] label {
+        color: #ffffff !important;
+    }
+    
+    /* Checkboxes */
+    .stCheckbox > label {
+        color: #ffffff !important;
+    }
+    
+    /* Multiselect */
+    .stMultiSelect > label {
+        color: #ffffff !important;
+    }
+    
+    .stMultiSelect > div > div {
+        background-color: #2a2a2a !important;
+        border: 2px solid #4a4a4a !important;
+        color: #ffffff !important;
+    }
+    
+    /* Date input */
+    .stDateInput > label {
+        color: #ffffff !important;
+    }
+    
+    .stDateInput > div > div > input {
+        background-color: #2a2a2a !important;
+        border: 2px solid #4a4a4a !important;
+        color: #ffffff !important;
+    }
+    
+    /* Number input */
+    .stNumberInput > label {
+        color: #ffffff !important;
+    }
+    
+    .stNumberInput > div > div > input {
+        background-color: #2a2a2a !important;
+        border: 2px solid #4a4a4a !important;
+        color: #ffffff !important;
+    }
+    
+    /* Slider */
+    .stSlider > label {
+        color: #ffffff !important;
+    }
+    
+    /* File uploader */
+    .stFileUploader > label {
+        color: #ffffff !important;
+    }
+    
+    /* Progress bar */
+    .stProgress > div > div > div {
+        background-color: #00e676 !important;
     }
 </style>
 """, unsafe_allow_html=True)
